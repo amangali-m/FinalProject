@@ -1,0 +1,72 @@
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+
+}
+
+h3 {
+    font-family: sans-serif;
+    text-align: left;
+}
+
+form {
+    font-family: sans-serif;
+    font-size: 16pt;
+    border-radius: 8px;
+}
+
+input[type=text] {
+    background: whitesmoke;
+    border: solid 1px grey;
+    border-radius: 8px;
+    font-size: 16pt;
+    font-family: 'Raleway', sans-serif;
+}
+
+input [type=submit] {
+    background: #079BCF;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 16pt;
+}
+
+button {
+    background: #079BCF;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 16pt;
+}
+
+a {
+    font-family: sans-serif;
+    font-size: 14pt;
+    text-decoration: none;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 14pt;
+}
+
+.addtocart {
+    font-family: sans-serif;
+    font-size: 14pt;
+    background-color: green;
+    color: white;
+    border-radius: 8px;
+    border: solid 1px darkgreen;
+    padding: 5px;
+}
+
+.goods{
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: whitesmoke;
+}

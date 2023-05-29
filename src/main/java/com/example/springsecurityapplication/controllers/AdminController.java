@@ -2,6 +2,7 @@ package com.example.springsecurityapplication.controllers;
 
 import com.example.springsecurityapplication.models.Category;
 import com.example.springsecurityapplication.models.Image;
+import com.example.springsecurityapplication.models.Person;
 import com.example.springsecurityapplication.models.Product;
 import com.example.springsecurityapplication.repositories.CategoryRepository;
 import com.example.springsecurityapplication.services.PersonService;
@@ -20,7 +21,7 @@ import java.util.UUID;
 
 @Controller
 public class AdminController {
-    private final PersonService personService;//
+    private final PersonService personService;
     private final ProductService productService;
 
     @Value("${upload.path}")
@@ -38,19 +39,34 @@ public class AdminController {
         model.addAttribute("products", productService.getAllProduct());
         return "admin";
     }
+//upd 29MAY
+    @GetMapping("/admin/users")
+    public String allUsers(Model model){
+        model.addAttribute("users", personService.getAllPerson());
+        return "users";
+    }
 
-//    @GetMapping("/admin/users")
-//    public String allUsers(Model model){
-//        model.addAttribute("users", personService.getAllPerson());
-//        return "users";
-//    }
-//
-//    @GetMapping("/admin/users/{id}")
-//    public String userInfo(@PathVariable("id") int id, Model model){
-//        model.addAttribute("users", personService.findById(id));
-//        return "userInfo";
-//    }
+    @GetMapping("/admin/users/{id}")
+    public String userInfo(@PathVariable("id") int id, Model model){
+        model.addAttribute("users", personService.findById(id));
+        return "userInfo";
+    }
+    @GetMapping("/admin/users/edit/{id}")
+    public String editUser (Model model, @PathVariable("id") int id){
+        model.addAttribute("person", personService.findById(id));
+        return "editUser";
+    }
 
+    @PostMapping("/admin/users/edit/{id}")
+    public String editUser (@ModelAttribute("person") @Valid Person person, BindingResult bindingResult, @PathVariable("id") int id, Model model){
+        if (bindingResult.hasErrors()){
+//            model.addAttribute("person", personService.findById(id));
+            return "editUser";
+        }
+        personService.updatePerson(id, person);
+        return "redirect:/admin/users/{id}";
+    }
+// end of upd
     @GetMapping("admin/product/add")
     public String addProduct (Model model){
         model.addAttribute("product", new Product());

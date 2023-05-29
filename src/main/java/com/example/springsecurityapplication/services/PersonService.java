@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional(readOnly = true)
+
 public class PersonService {
     private final PersonRepository personRepository;
     private final PasswordEncoder passwordEncoder;
@@ -33,6 +35,13 @@ public class PersonService {
         person.setRole("ROLE_USER");
         personRepository.save(person);
     }
+//Upd29MAY
+    @Transactional
+    public void updatePerson(int id, Person person){
+        person.setRole("ROLE_ADMIN");
+        personRepository.save(person);
+    }
+// end of update
 
     public List<Person> getAllPerson(){
         return personRepository.findAll();

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Информация о пользователе</title>
+</head>
+<body>
+  <h3>Редактирование права пользователя</h3>
+  <form th:method="POST" th:action="@{/admin/users/edit/{id}(id=${person.getId()})}" th:object="${person}">
+    <label for="role">Введите право пользователя: </label>
+    <input type="text" th:field="*{role}" id="role">
+    <input type="submit" value="Сохранить изменения">
+  </form>
+  <br>
+  <a href="/admin/users">Вернуться к списку пользователей</a>
+</body>
+</html>

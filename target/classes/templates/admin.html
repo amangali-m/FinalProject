@@ -10,10 +10,7 @@
         <input type = "hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}">
         <button type = "submit"> Выйти </button>
     </form>
-<!--    <form method="post" action="/logout">-->
-<!--        <button type="submit">Выйти из личного кабинета</button>-->
-<!--    </form>-->
-<!--    <a href="admin/users">Пользователи</a>-->
+    <a href="admin/users">Пользователи</a>
     <a href="admin/product/add">Добавить товар</a>
     <hr>
     <div th:each="product: ${products}">
