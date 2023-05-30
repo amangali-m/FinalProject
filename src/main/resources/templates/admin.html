@@ -22,6 +22,11 @@
         <p th:text="'Склад: ' + ${product.getWarehouse()}"></p>
         <p th:text="'Продавец: ' + ${product.getSeller()}"></p>
         <p th:text="'Категория: ' + ${product.getCategory().getName()}"></p>
+        <div class="slider" th:each="img: ${product.getImageList()}">
+            <img class="prod_pic" th:src="'/img/' + ${img.getFilename()}" width="200px">
+        </div>
+        <br>
+        <br>
         <a th:href="@{/admin/product/edit/{id}(id=${product.getId()})}">Редактирование товара</a>
         <a th:href="@{/admin/product/delete/{id}(id=${product.getId()})}" class="delete">Удаление товара</a>
     </div>

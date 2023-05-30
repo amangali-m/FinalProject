@@ -117,3 +117,18 @@ input[type=text] {
     font-size: 14pt;
     font-family: sans-serif;
 }
+
+.slider {
+    display: inline;
+}
+
+.prod_pic {
+    border-radius: 5px;
+    border: none;
+    margin: 2px;
+}
+
+.prod_pic:focus{
+    cursor: zoom-out;
+    transform: scale(2,2);
+}

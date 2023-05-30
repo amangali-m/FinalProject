@@ -18,7 +18,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     List<Product> findByTitleAndPriceGreaterThanEqualAndPriceLessThanEqual(String title, float ot, float Do);
 
     // Поиск по наименованию и фильтрация по диапазону цены, а также сортировка по возрастанию цены
-    @Query(value = "select * from product where (lower(title) LIKE %?1%) OR (lower(title) LIKE '?1%') OR (lower(title) LIKE '%?1') and (price >= ?2 and price <= ?3) order by price",nativeQuery = true)
+    @Query(value = "select * from product where (lower(title) LIKE %?1%) OR (lower(title) LIKE '?1%') OR (lower(title) LIKE '%?1') and (price >= ?2 and price <= ?3) order by price asc",nativeQuery = true)
     List<Product> findByTitleOrderByPriceAsc(String title, float ot, float Do);
 
     // Поиск по наименованию и фильтрация по диапазону цены, а также сортировка по убыванию цены
