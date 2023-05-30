@@ -7,7 +7,7 @@
 </head>
 <body>
     <h3>Заказы</h3>
-    <div th:each="order : ${orders}">
+    <div class="container" th:each="order : ${orders}">
         <h3 th:text="'Заказ №' + ${order.getNumber()}"></h3>
         <img th:src="'/img/' + ${order.getProduct().getImageList()[0].getFilename()}" width="300px">
         <p th:text="'Наименование: ' + ${order.getProduct().getTitle()}">
@@ -16,5 +16,6 @@
         <p th:text="'Дата заказа: ' + ${#temporals.format(order.getDateTime(), 'dd-MMM-yyyy')}"></p>
         <p th:text="'Cтатус: ' + ${order.getStatus()}">
     </div>
+    <a href="/personal_account">На главную</a>
 </body>
 </html>

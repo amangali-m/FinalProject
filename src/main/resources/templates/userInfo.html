@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Информация о пользователе</title>
+    <link th:href="@{/css/admin.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
     <h3>Информация о пользователе</h3>
@@ -11,5 +12,6 @@
         <p th:text="'Role: ' + ${person.getRole()}"></p>
     </div>
     <a th:href="@{/admin/users/edit/{id}(id=${users.getId()})}">Редактирование пользователя</a>
+    <a href="/admin">На главную</a>
 </body>
 </html>

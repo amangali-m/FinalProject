@@ -45,7 +45,7 @@ public class ProductController {
                     } else {
                         model.addAttribute("search_product", productRepository.findByTitleOrderByPriceAsc(search.toLowerCase(), Float.parseFloat(ot), Float.parseFloat(Do)));
                     }
-                } else if(price.equals("sorted_by_descending_price")){
+                } else if (price.equals("sorted_by_descending_price")){
                     if(!contract.isEmpty()){
                         if(contract.equals("furniture")){
                             model.addAttribute("search_product", productRepository.findByTitleAndCategoryOrderByPriceDesc(search.toLowerCase(), Float.parseFloat(ot), Float.parseFloat(Do), 1));

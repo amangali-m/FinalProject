@@ -60,7 +60,7 @@ public class AdminController {
     @PostMapping("/admin/users/edit/{id}")
     public String editUser (@ModelAttribute("person") @Valid Person person, BindingResult bindingResult, @PathVariable("id") int id, Model model){
         if (bindingResult.hasErrors()){
-//            model.addAttribute("person", personService.findById(id));
+            model.addAttribute("person", personService.findById(id));
             return "editUser";
         }
         personService.updatePerson(id, person);

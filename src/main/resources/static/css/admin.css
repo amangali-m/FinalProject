@@ -1,0 +1,119 @@
+h1 {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+h3 {
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.logout {
+    background: #079BCF;
+    border: none;
+    border-radius: 8px;
+    margin: 2px;
+    position: absolute;
+    right: 10px;
+}
+
+button {
+    text-decoration: none;
+    background: #079BCF;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 14pt;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    background: #079BCF;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14pt;
+    padding: 5px;
+    margin: 2px;
+}
+
+a:visited {
+    font-family: sans-serif;
+    font-size: 14pt;
+    text-decoration: none;
+}
+
+.delete {
+    text-decoration: none;
+    background: darkred;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14pt;
+    padding: 5px;
+}
+
+.delete:visited {
+    font-family: sans-serif;
+    font-size: 14pt;
+    color: red;
+    text-decoration: none;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 14pt;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-content: baseline;
+    margin: 0 50vw 0 0;
+}
+
+.container {
+    border-radius: 8px;
+    border: solid 1px lightblue;
+    padding: 10px;
+    margin: 5px;
+}
+
+.users {
+    font-family: sans-serif;
+    font-size: 14pt;
+    text-decoration: none;
+    background: none;
+    color: black;
+}
+
+input[type=submit]{
+    text-decoration: none;
+    background: #079BCF;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14pt;
+    padding: 5px;
+}
+
+.edit_user{
+    font-family: sans-serif;
+    font-size: 14pt;
+    text-decoration: none;
+    background: none;
+}
+
+input[type=text] {
+    background: whitesmoke;
+    border: solid 1px grey;
+    border-radius: 8px;
+    font-size: 14pt;
+    font-family: sans-serif;
+}

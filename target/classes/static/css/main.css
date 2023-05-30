@@ -15,12 +15,21 @@ form {
     border-radius: 8px;
 }
 
+.logout {
+    background: #079BCF;
+    border: none;
+    border-radius: 8px;
+    margin: 2px;
+    position: absolute;
+    right: 10px;
+}
+
 input[type=text] {
     background: whitesmoke;
-    border: solid 1px grey;
+    border: solid 1px lightblue;
     border-radius: 8px;
     font-size: 16pt;
-    font-family: 'Raleway', sans-serif;
+    font-family: sans-serif;
 }
 
 input [type=submit] {
@@ -43,12 +52,19 @@ button {
 }
 
 a {
+    text-decoration: none;
+    background: #079BCF;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
     font-family: sans-serif;
     font-size: 14pt;
-    text-decoration: none;
+    padding: 5px;
+    margin: auto;
 }
 
-p {
+p, label {
     font-family: sans-serif;
     font-size: 14pt;
 }
@@ -59,14 +75,82 @@ p {
     background-color: green;
     color: white;
     border-radius: 8px;
+    padding: 5px;
+    margin: auto;
+}
+
+.goods{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14pt;
+    color: blue;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.goods_img {
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    border-radius: 8px;
+    border: solid 1px lightblue;
+    padding: 10px;
+    margin: 5px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-content: baseline;
+    margin: 0 50vw 0 0;
+}
+
+fieldset{
+    background: none;
+    border: none;
+    font-family: sans-serif;
+    font-size: 14pt;
+}
+
+.find{
+    font-family: sans-serif;
+    font-size: 14pt;
+    background-color: #079BCF;
+    color: white;
+    border-radius: 8px;
     border: solid 1px darkgreen;
     padding: 5px;
 }
 
-.goods{
-    margin: 5px;
-    padding: 10px;
+.save {
+    font-family: sans-serif;
+    font-size: 14pt;
+    background-color: #079BCF;
+    color: white;
+    border-radius: 8px;
+    border: solid 1px grey;
+    padding: 5px;
+}
+
+.delete {
+    text-decoration: none;
+    background: darkred;
     border: none;
     border-radius: 8px;
-    background-color: whitesmoke;
+    color: #fff;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14pt;
+    padding: 5px;
+    margin: auto;
+}
+
+img {
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
 }

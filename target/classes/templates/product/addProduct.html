@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Добавление товара</title>
+    <link th:href="@{/css/main.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
     <h3>Добавление товара</h3>
@@ -48,7 +49,8 @@
         <input type="file" name="file_three"><br>
         <input type="file" name="file_four"><br>
         <input type="file" name="file_five"><br><br>
-        <input type="submit" value="Добавить">
+        <input class="save" type="submit" value="Добавить">
+        <a class="save" href="/admin">Выйти без сохранения</a>
     </form>
 </body>
 </html>

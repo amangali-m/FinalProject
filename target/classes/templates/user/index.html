@@ -6,21 +6,22 @@
     <link th:href="@{/css/main.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <h1>Личный кабинет</h1>
-    <form method="get" th:action="@{/cart}">
-        <button type="submit">Корзина</button>
-    </form>
-    <form method="get" th:action="@{/orders}">
-        <button type="submit">Заказы</button>
-<!--        <input type="submit" value="Заказы">-->
-    </form>
-    <form method = "post" th:action="@{/logout}">
-        <input type = "hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}">
-        <button type = "submit"> Выйти </button>
-    </form>
+    <h1>Личный кабинет пользователя</h1>
+    <div class="nav">
+        <form method="get" th:action="@{/cart}">
+            <button type="submit">Корзина</button>
+        </form>
+        <form method="get" th:action="@{/orders}">
+            <button type="submit">Заказы</button>
+        </form>
+        <form class="logout" method = "post" th:action="@{/logout}">
+            <input type = "hidden" th:name="${_csrf.parameterName}"  th:value="${_csrf.token}">
+            <button type = "submit"> Выйти </button>
+        </form>
+    </div>
     <br>
     <h3>Сортировка, поиск, фильтрация</h3>
-    <form th:method="POST" th:action="@{/personal_account/product/search}">
+    <form class="container" th:method="POST" th:action="@{/personal_account/product/search}">
         <fieldset>
             <legend>Выберите параметры для сортировки, поиска, фильтрации</legend>
             <label for="search">Поиск по наименованию</label>
@@ -47,24 +48,22 @@
                 <label for="clothes">Одежда</label>
                 <br>
                 <br>
-                <input type="submit" value="Найти">
+                <input class="find" type="submit" value="Найти">
             </div>
         </fieldset>
     </form>
-    <hr>
     <h3>Результат поиска, сортировки, фильтрации</h3>
-    <div th:each="product : ${search_product}">
+    <div class="container" th:each="product : ${search_product}">
         <img th:src="'/img/' + ${product.imageList[0].getFileName()}" width="300px">
         <br>
-        <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
+        <a class="goods" th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
         <p th:text="'Цена: ' + ${product.getPrice()}"></p>
     </div>
-    <hr>
     <h3>Доступные товары</h3>
-    <div class="goods" th:each="product: ${products}">
+    <div class="container" th:each="product: ${products}">
         <img th:src="'/img/' + ${product.imageList[0].getFilename()}" width="300px">
         <br>
-        <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
+        <a class="goods" th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>
         <p th:text="'Цена: ' + ${product.getPrice()}"></p>
         <a class="addtocart" th:href="@{/cart/add/{id}(id=${product.getId()})}">Добавить товар в корзину</a>
     </div>

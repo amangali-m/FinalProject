@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-    // Поиск всех продуктов по части наименования продукта в не зависомости от регистра
+    // Поиск всех продуктов по части наименования продукта вне зависимости от регистра
     List<Product> findByTitleContainingIgnoreCase (String name);
 
     // Поиск по наименованию и фильтрация по диапазону цены

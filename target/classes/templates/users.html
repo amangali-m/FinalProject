@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Пользователи</title>
+    <link th:href="@{/css/admin.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
-  <div th:each="person: ${users}">
-      <a th:href="@{/admin/users/{id}(id=${person.getId()})}" th:text="${person.getLogin()}"></a>
+    <h3>Список пользователей</h3>
+  <div class="container" th:each="person: ${users}">
+      <a class="users" th:href="@{/admin/users/{id}(id=${person.getId()})}" th:text="${person.getLogin()}"></a>
   </div>
+    <br>
+    <a href="/admin">На главную</a>
 </body>
 </html>

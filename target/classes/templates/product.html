@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Список товаров</title>
-    <link th:href="@{/css/main.css}" type="text/css" rel="stylesheet">
+    <link th:href="@{/css/product.css}" type="text/css" rel="stylesheet">
 </head>
 <body>
 <h3>Сортировка, поиск, фильтрация</h3>
 <form th:method="POST" th:action="@{product/search}">
-    <fieldset>
+    <fieldset class="container">
         <legend>Выберите параметры для сортировки, поиска, фильтрации</legend>
         <label for="search">Поиск по наименованию</label>
         <input type="text" id="search" name="search" th:value="*{value_search}">
@@ -49,7 +49,7 @@
 </div>
 <hr>
 <h3>Доступные товары</h3>
-<div th:each="product: ${products}">
+<div class="container" th:each="product: ${products}">
     <img th:src="'/img/' + ${product.imageList[0].getFilename()}" width="300px">
     <br>
     <a th:href="@{/product/info/{id}(id=${product.getId()})}" th:text="${product.getTitle()}"></a>

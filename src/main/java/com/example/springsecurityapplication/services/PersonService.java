@@ -1,7 +1,6 @@
 package com.example.springsecurityapplication.services;
 
 import com.example.springsecurityapplication.models.Person;
-import com.example.springsecurityapplication.models.Product;
 import com.example.springsecurityapplication.repositories.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

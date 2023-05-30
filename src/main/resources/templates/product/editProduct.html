@@ -42,7 +42,8 @@
         <div style="color: red" th:if="${#fields.hasErrors('seller')}" th:errors="*{seller}"></div>
         <br>
         <br>
-        <input type="submit" value="Сохранить изменения">
+        <input class="find" type="submit" value="Сохранить изменения">
+        <a class="save" href="/admin">Выйти без сохранения</a>
     </form>
 </body>
 </html>
